@@ -31,3 +31,17 @@
     transform: rotate(360deg);
   }
 }
+form {
+  padding: 40px;
+}
+form input{
+  width: 300px;
+  display: block;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+form button{
+  padding: 5px 13px;
+  text-transform: uppercase;
+  margin-right: 176px;
+}
