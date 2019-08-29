@@ -2,16 +2,29 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.nameInput = React.createRef();
+  }
+
+  // button that handles submitting the form
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const password = e.target.password.value;
+    console.log(name, password);
+  }  
   
   render() { 
     return ( 
-      <form className="registration">
+      <form className="registration" onSubmit={(e) => this.handleSubmit(e)}>
        <h2>Register</h2>
        <div className="registration__hint">* required field</div>  
        <div className="form-group">
          <label htmlFor="name">Name *</label>
          <input type="text" className="registration__control"
-           name="name" id="name"/>
+           name="name" id="name" ref={this.nameInput}/>
        </div>
        <div className="form-group">
           <label htmlFor="password">Password *</label>
